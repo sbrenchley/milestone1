@@ -1,8 +1,8 @@
-require('dotenv').config();
-
 var express = require('express');
 var path = require('path');
 var app = express();
+
+if (app.settings.env === 'development') { require('dotenv').config(); }
 
 app.set('port', (process.env.PORT || 5000));
 
