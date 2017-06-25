@@ -1,0 +1,8 @@
+# i like to run git diff > out.diff and inspect that file in atom, so ignore it
+out.diff
+
+# don't track node_modules
+/node_modules
+
+# ignore weird apple file
+.DS_Store
