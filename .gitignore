@@ -6,3 +6,6 @@ out.diff
 
 # ignore weird apple file
 .DS_Store
+
+# secrets
+.env
