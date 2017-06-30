@@ -20,10 +20,31 @@ router.get('/getTweets', function(req, res) {
     timeout_ms:           60 * 1000,  // optional HTTP request timeout to apply to all requests.
   })
 
-  twitter.get('search/tweets', { q: "\uD83D\uDE00", count: 5 }, function(err, data, response) {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(data));
-  })
+  twitter.get(
+    'search/tweets',
+    { q: '"i\'m ' + req.query.search_term + '"', count: 5 },
+    function(err, data, response) {
+      res.setHeader('Content-Type', 'application/json');
+
+      var list_items = data.statuses.map(function (tweet) {
+
+        var full_tweet = tweet.text.replace(
+          new RegExp(req.query.search_term, 'ig'),
+          "<em>$&</em>"
+        );
+
+        return [
+          '<li class="' + req.query.html_class + '">',
+            '<span class="large">',
+              full_tweet,
+            '</span>',
+          '</li>'
+        ].join('');
+      });
+
+      res.send(JSON.stringify(list_items));
+    }
+  )
 })
 
 module.exports = router

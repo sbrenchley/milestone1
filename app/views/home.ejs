@@ -17,7 +17,58 @@
     </ul>
 
     <script type="text/javascript">
-    </script>
+      // animate code from: http://stackoverflow.com/questions/4170162/jquery-append-list-items-to-existing-list-with-gradual-animation
+      var interval_id = -1;
+      var selected = null;
+      var click_handler = function(search_term, html_class) {
+        $.ajax({
+          url : "/getTweets",
+          type : "GET",
+          dataType : "json",
+          data : { search_term: search_term, html_class: html_class }
+        }).done(function(data) {
+          var i = 0;
+          interval_id = setInterval(function () {
+            var emoji_parse = twemoji.parse(data[i]);
+            $(emoji_parse).appendTo("#items").hide().animate(
+              {
+                "height": "show",
+                "marginTop": "show",
+                "marginBottom": "show",
+                "paddingTop": "show",
+                "paddingBottom": "show"
+              },
+              { duration: 800 }
+            );
+            i += 1;
+            if( i >= data.length || i >= 5) {
+              var next = null;
+              var h2_elements = $("h2");
+              $.each(h2_elements, function(index, h2) {
+                if($(h2)[0] == selected[0]) {
+                  next = $(h2_elements[(index + 1) % h2_elements.length]);
+                }
+              });
+              next.click();
+            }
+          }, 1500);
+        });
+      }
+      $(document).on("click", "h2", function() {
+        clearInterval(interval_id);
+        if(selected) { selected.attr("class", selected.attr("class").split(" ")[0])}
 
+        selected = $(this)
+        selected.attr("class", selected.attr("class") + " selected")
+        click_handler(
+          selected.data("search"),
+          selected.attr("class").split(" ")[0]
+        );
+      });
+      var init = function() {
+        $("h2")[0].click();
+      }
+      $(document).ready(init);
+    </script>
   </body>
 </html>
