@@ -20,7 +20,7 @@ router.get('/getTweets', function(req, res) {
     timeout_ms:           60 * 1000,  // optional HTTP request timeout to apply to all requests.
   })
 
-  twitter.get('search/tweets', { q: 'byui', count: 5 }, function(err, data, response) {
+  twitter.get('search/tweets', { q: "\uD83D\uDE00", count: 5 }, function(err, data, response) {
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(data));
   })

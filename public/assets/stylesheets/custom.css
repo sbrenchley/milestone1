@@ -25,10 +25,8 @@ html {
 h2 {
   position: relative;
   z-index: 1;
-  /*font-size: 63px;
-  line-height: 59px;*/
-  font-size: 43px;
-  line-height: 40px;
+  font-size: 40px;
+  line-height: 43px;
   overflow: hidden;
   font-weight: bold;
   margin: 0;
@@ -93,37 +91,33 @@ h2 span {
   /* text-transform: lowercase; */
 }
 
-.love { color: #a839b2 }
-.love.selected span { background-color: #a839b2 }
-#items li.love em { color: #a839b2 }
+.happy { color: #a839b2 }
+.happy.selected span { background-color: #a839b2 }
+#items li.happy em { color: #a839b2 }
 
-.hate { color: #ff0071 }
-.hate.selected span { background-color: #ff0071 }
-#items li.hate em { color: #ff0071 }
+.excited { color: #ff0071 }
+.excited.selected span { background-color: #ff0071 }
+#items li.excited em { color: #ff0071 }
 
-.think { color: #acd030 }
-.think.selected span { background-color: #acd030 }
-#items li.think em { color: #acd030 }
+.confused { color: #58aa00 }
+.confused.selected span { background-color: #58aa00 }
+#items li.confused em { color: #58aa00 }
 
-.believe { color: #58aa00 }
-.believe.selected span { background-color: #58aa00 }
-#items li.believe em { color: #58aa00 }
+.bored { color: #00aa78 }
+.bored.selected span { background-color: #00aa78 }
+#items li.bored em { color: #00aa78 }
 
-.feel { color: #00aa78 }
-.feel.selected span { background-color: #00aa78 }
-#items li.feel em { color: #00aa78 }
+.sad { color: #0074ae }
+.sad.selected span { background-color: #0074ae }
+#items li.sad em { color: #0074ae }
 
-.wish { color: #0074ae }
-.wish.selected span { background-color: #0074ae }
-#items li.wish em { color: #0074ae }
+.sick { color: #FF8330 }
+.sick.selected span { background-color: #FF8330 }
+#items li.sick em { color: #FF8330 }
 
-.name { color: #FF8330 }
-.name.selected span { background-color: #FF8330 }
-#items li.name em { color: #FF8330 }
-
-.potty { color: #D11919 }
-.potty.selected span { background-color: #D11919 }
-#items li.potty em { color: #D11919 }
+.angry { color: #D11919 }
+.angry.selected span { background-color: #D11919 }
+#items li.angry em { color: #D11919 }
 
 /* twitter emojis */
 img.emoji {
@@ -131,66 +125,4 @@ img.emoji {
    width: 1em;
    margin: 0 .05em 0 .1em;
    vertical-align: -0.1em;
-}
-
-/* not sure */
-
-.y2010, #items li.y2010 em { color: #f3c435 }
-.y2010.selected span { background-color: #f3c435 }
-
-.pirate, #items li.pirate em { color: #f3c435 }
-.pirate.selected span { background-color: #f3c435 }
-
-.ninja, #items li.ninja em { color: #f9934f }
-.ninja.selected span { background-color: #f9934f }
-
-.cowboy, #items li.cowboy em { color: #ff6600 }
-.cowboy.selected span { background-color: #ff6600 }
-
-.robot, #items li.robot em { color: #e54100 }
-.robot.selected span { background-color: #e54100 }
-
-.tired, #items li.tired em { color: #9bff65 }
-.tired.selected span { background-color: #9bff65 }
-
-.sleep, #items li.sleep em { color: #66ff7d }
-.sleep.selected span { background-color: #66ff7d }
-
-.nap, #items li.nap em { color: #66ffc9 }
-.nap.selected span { background-color: #66ffc9 }
-
-/* not used */
-
-h1 {
-  position: absolute;
-  bottom: 264px;
-  font-size: 24px;
-  width: 200px;
-  color: #fff;
-  margin: 0;
-  letter-spacing: -2px;
-  margin-left: 14px;
-  text-decoration: none;
-}
-
-*+html h1 {
-  bottom: 237px;
-}
-
-h1 a {
-  color: #fff;
-  text-decoration: none;
-}
-
-#credits {
-  position: absolute;
-  left: 14px;
-  bottom: 11px;
-  width: 150px;
-  font-size: 14px;
-  line-height: 15px;
-  letter-spacing: -1px;
-  text-transform: lowercase;
-  color: #fff;
-  z-index: 1;
 }
